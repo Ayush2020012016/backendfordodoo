@@ -6,6 +6,7 @@ const cors = require('cors')
 const User = require('./model/userSchema')
 const jwt = require('jsonwebtoken');
 const path = require('path')
+const PORT = process.env.PORT || 4000
 
 dotenv.config();
 //middlewares
@@ -68,7 +69,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
   });
 
-app.listen(process.env.PORT || "4000",console.log("server started at 4000"));
+app.listen(PORT,console.log(`server started at ${PORT}`));
 
 
 
